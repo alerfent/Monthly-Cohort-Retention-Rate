@@ -14,7 +14,8 @@ import pandas as pd
 # ---------- 1. 讀取原始資料 ----------
 RAW_DATA_PATH = "online_retail_II.csv" 
 
-df = pd.read_csv(RAW_DATA_PATH, encoding="ISO-8859-1")
+df = pd.read_csv(RAW_DATA_PATH, encoding="ISO-8859-1") 
+#因為讀取的檔案是英歐國家,透過ISO-8859-1可以將所有 0 至 255 的位元值都映射到某個字元上,能確保 Pandas 順利將資料讀入，不會因位元解析失敗而崩潰。
 
 print("=" * 50)
 print("【原始資料檢查】")
